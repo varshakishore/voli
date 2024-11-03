@@ -1,0 +1,44 @@
+
+{% comment %}
+{% assign image_files = site.static_files 
+    | where_exp: "item", "item.path contains '/assets/gallery'" %} 
+{% endcomment %}
+
+{% assign extra_image_files = site.static_files
+    | where_exp: "item", "item.path contains '/assets/small'" %}
+
+{% assign image_files = extra_image_files %}
+
+{% if include.save_image_names_js %}
+{{imgfile.name}}
+<script type="text/javascript">
+    let {{include.save_image_names_js}} = [
+        {% for imgfile in image_files %}'{{ imgfile.path | relative_url }}',{% endfor %} ];
+</script>
+{% endif %}
+
+
+
+{% assign i = 0 %}
+{% assign num_imgs = include.gridnums | default : "4,5" | split: "," %}
+{% unless include.nospacers %}  
+<div class="gallery-spacer"></div>
+{% endunless %}
+<div class="hex-container">
+    {% for row in num_imgs %}
+    <div class="hex-row">
+        {% for col in (1..row) %}
+        <div class="hex-wrapper">
+        <div class="hex-pad"></div>
+        <div class="hex">
+            <img src="{{image_files[i].path | relative_url }}" />
+            {% assign i = i | plus : 1 %}
+        </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
+{% unless include.nospacers %} 
+<div class="small-spacer"></div>
+{% endunless %}

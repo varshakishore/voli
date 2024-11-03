@@ -1,0 +1,222 @@
+/* replacement for default styling, which I have now removed */
+
+:root{
+    --vcolor:rgb(20, 54, 54);
+    --ocolor:rgb(144, 28, 88);
+    --accent:#EAE;
+}
+
+*:target { background: yellow; }
+navbar {
+    text-align:center;
+    display:block;
+    min-height: 70px;
+    margin-bottom: 20px;
+}
+body {
+    color: #222;
+    /* font-family: monospace; */
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-size: 13pt;
+    line-height: 1.4;
+    margin: 0;
+    min-height: 100%;
+}
+
+.center { text-align: center;}
+/* .main-title { margin : 50px; font-size: 72pt; } */
+.main-title { margin : 30px; font-size: 72pt; }
+.wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+
+.sideways {
+    /* rotate: -90deg; */
+    /* border: 1px solid black; */
+    transform: rotate(-90deg) translateY(-120%) translateX(-50%);
+    transform-origin: left top;
+    position: absolute;
+    top: 50%;
+}
+.sideways h1 {
+    font-size: 1.8em;
+    margin-bottom: 2ex;
+    font-weight: 300;
+    /* font-family: monospace; */
+}
+
+
+.block {
+    margin-top: 30px;
+    /* border-left: 5px solid #EAE; */
+    border-left: 8px solid var(--accent);
+    padding-left: 20px;
+    position:relative;
+}
+
+.block h2 {
+    margin-bottom: 1ex;
+    /* text-align: center; */
+}
+.block .timing {
+    margin-left: 50px;
+    /* display: inline-block; */
+    /* margin-bottom: 1ex; */
+}
+.block .attire {
+    margin-left: 60px;
+    display: block;
+    margin-bottom: 3ex;
+    font-size: smaller;
+    color: color-mix(in srgb, var(--accent) 60%, black 30%)
+}
+.block .cal-links{
+    float: right;
+}
+
+.evt-details {
+    margin-left: 10px;
+    font-size: 12pt;
+    color: gray;
+}
+.evt-details p {
+    margin-top: 1.2ex;
+    margin-bottom: 1.2ex;
+}
+
+.nav-home {
+    display:inline-block;
+    padding:10px;
+    margin-bottom:10px;
+}
+.nav-home a {
+    text-decoration : none;
+    color:black;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    vertical-align: middle;
+    font-size: 40pt;
+}
+
+.nav-item {
+    display: inline-block;
+    border-radius: 5px;
+    padding:10px;
+    margin-bottom:10px;
+    vertical-align: middle;
+    /* background-color: rgb(244, 218, 232);
+    border: 2px solid rgb(228, 207, 218); */
+    background-color: color-mix(in srgb, var(--ocolor) 20%, white);
+    border: 2px solid color-mix(in srgb, var(--ocolor) 25%, white);
+
+    transition: font-size .2s, background-color .15s;
+}
+.nav-item:hover{
+    font-size:larger;
+}
+.nav-item.current-tab {
+    font-size: larger;
+    background-color: color-mix(in srgb, white 20%, rgb(195, 60, 138));
+}
+.nav-item a {
+    text-decoration : none;
+    color: var(--vcolor)
+}
+
+navbar br {
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    navbar br {
+        display: block;
+    }
+}
+
+.rsvp {
+    margin-left:15px;
+    display: inline-block;
+    border-radius: 5px;
+    border: 2px solid black;
+    transition: font-size .2s, background-color .15s;
+
+    /* padding: 20px; */
+    font-size: 15pt;
+    background-color:var(--vcolor);
+    /* color:white; */
+    /* margin-top: 100px; */
+}
+.rsvp a {
+    color: white;
+}
+.rsvp:hover {
+    font-size:20pt;
+}
+
+a {
+    color: inherit;
+}
+
+
+.fullpagewidth {
+    text-align: center;
+    position: relative;
+    /* left: calc(50% - 50vw); */
+    left: calc(50% - 49vw);
+    overflow: hidden;
+    width: 98vw;
+}
+
+.marquee {
+    position: relative;
+    animation: marquee 20s linear infinite;
+    width: 100%;
+}
+
+@keyframes marquee {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+span.varsha {
+    color: var(--vcolor)
+        /* color-mix(teal 80%, black); */
+    /* font-size: 100pt; */
+    /* margin-right:-5px; */
+}
+
+span.oli {
+    /* color: rgb(224, 117, 172); */
+    /* margin-left: -5px; */
+    color: var(--ocolor);
+}
+
+span.establishment {
+    /* font-weight: 500; */
+    font-weight: bold;
+    /* color: color-mix(in srgb, var(--vcolor) 50%, red 40%); */
+    color: color-mix(in srgb, var(--accent) 50%, red 20%);
+}
+span.establishment::after {
+    content: " — "
+}
+
+@media only screen and (max-width: 768px) {
+    .sideways {
+        display:none;
+    }
+    .block ul {
+        padding-left: 1em;
+    }
+    .wrapper {
+        padding: 3rem 10px;
+    }
+    .block .timing {
+        margin-left : 20px;
+    }
+    .block .attire {
+        margin-left : 30px;
+    }
+}

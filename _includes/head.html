@@ -1,0 +1,30 @@
+<!--- copied from the default, below, and  
+https://github.com/riggraz/no-style-please/blob/master/_includes/head.html.-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+    <title>
+      {%- if page.title -%}
+        {{ page.title }}
+      {%- else -%}
+        {{ site.title }}
+      {%- endif -%}
+    </title>
+
+  
+    <!-- custom fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | relative_url }}" />
+    <link rel="stylesheet" href="/{{ site.baseurl }}cssjs/main.css" />
+    {% if page.custom_css %}
+    {% for sheet in page.custom_css %}
+    <link rel="stylesheet" href="/{{ site.baseurl }}cssjs/{{sheet}}.css" />
+    {% endfor %}
+    {% endif %}
+  </head>

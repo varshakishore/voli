@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en"><!--- copied from the default, below, and  
+https://github.com/riggraz/no-style-please/blob/master/_includes/head.html.-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+    <title>Event Schedule</title>
+
+  
+    <!-- custom fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/x-icon" href="" />
+    <link rel="stylesheet" href="/voli/cssjs/main.css" />
+    
+    
+    <link rel="stylesheet" href="/voli/cssjs/protect.css" />
+    
+    <link rel="stylesheet" href="/voli/cssjs/calendar.css" />
+    
+    
+  </head><body>
+    <div class="rain-pane"></div>
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+<navbar class="fullpagewidth">
+<ul>
+<!-- <li class="nav-home"><a href="/">Voli</a></li> -->
+<!-- <li class="nav-home"><a href="/"></a></li> -->
+<li class="nav-item" > <!--  -->
+    <a href="/voli/">
+        <!-- <div style="background-image: url('/assets/cloud.png'); width:10px; height:18px;"></div> -->
+        <img src="/voli/assets/cloud.png" height="30px" style="margin:-10px -0px; "/>
+    </a>
+</li>
+
+
+
+    
+<li class="nav-item current-tab">
+    <a href="/voli/tabs/events.html" >
+        Events
+    </a>
+</li>
+
+
+
+
+    
+<li class="nav-item ">
+    <a href="/voli/tabs/gallery.html" >
+        Gallery
+    </a>
+</li>
+
+
+
+<br>
+<li class="nav-item rsvp">
+    <a href="https://forms.gle/1KobqjmUYpwjUKuJ7"> RSVP </a>
+</li>
+
+</ul>
+</navbar>
+
+
+
+<div class="center">
+<h1 onclick="document.getElementById('unlock-controls').style.display = 'block';"> Event Schedule </h1>
+</div>
+
+<div class="center" id="unlock-controls">
+    <p style="margin-bottom:35px;">
+        Event details and timings are only available for guests. 
+        If you cannot find the password that came with your link to this website
+        (or are not yet a guest but would like to become one), 
+        <br/>
+        please contact Oliver or Varsha! 
+    </p>
+    <!-- <p>Please enter the password that you receivied with the website link to unlock event details and timings. Contact Varsha/Oli if you can't find the password.</p> -->
+    <div>
+    <label for="passwd"><b>password:</b></label>
+    <input type="text" id="passwd" name="">
+    <span id="wrongpass">Incorrect Password!</span>
+    </div>
+    <div>
+    <input type=checkbox id="cookie-permit" selected></input>
+    <label for="cookie-permit" style="max-width:100px;overflow:visible;">save unlock in a 
+            <a href="https://en.wikipedia.org/wiki/HTTP_cookie">cookie</a>
+            that expires after the wedding?</label>
+    </div>
+
+    <button id="unlock-btn" onclick="unlock();"> unlock event details </button>
+</div>
+
+<div class=block data-access-level=0>
+(Feel free to wear anything you'd like for all of the events. The attire listed below is just a suggestion in case you are looking for inspiration.)
+</div>
+
+
+
+
+<div class="block hidden" style="--accent:#1d5522"
+    data-access-level=3>
+<div class="sideways"><h1>
+    Rituals
+</h1></div>
+
+
+<h2> Chapram Puja</h2>
+<div class="calendar-dropdown">
+    <button onclick="toggleDropdown(0)" class="main-button">
+      <span class="icon">🗓️</span> &nbsp;&nbsp;Add to Calendar
+    </button>
+    <div id="dropdown-menu-0" class="dropdown-menu">
+      <button onclick="addToGoogleCalendar(`Chapram Puja (Voli)`, `#557, 9th Cross, 3rd Phase, J P Nagar, Bangalore 560078.`, `20250116T020000Z`, `20250116T083000Z`, `Event to commence wedding celebrations by seeking blessings from ancestors.`)">Google
+      </button>
+      <button onclick="addToAppleCalendar(`Chapram Puja (Voli)`, `#557, 9th Cross, 3rd Phase, J P Nagar, Bangalore 560078.`, `20250116T020000Z`, `20250116T083000Z`, `Event to commence wedding celebrations by seeking blessings from ancestors.`)">Apple
+      </button>
+      <button onclick="addToOutlookCalendar(`Chapram Puja (Voli)`, `#557, 9th Cross, 3rd Phase, J P Nagar, Bangalore 560078.`, `20250116T020000Z`, `20250116T083000Z`, `Event to commence wedding celebrations by seeking blessings from ancestors.`)">Outlook
+      </button>
+    </div>
+  </div>
+<div class="timing">
+16 January 2025
+@ 7:30am -- 2:00pm (feel free to come around 9:30am)
+<!-- <span class="cal-links">
+    <a href=""> [cal] </a>
+</span> -->
+
+<!-- <div class="add-to-calendar">
+    <button onclick="addToGoogleCalendar('Chapram Puja (Voli)', '#557, 9th Cross, 3rd Phase, J P Nagar, Bangalore 560078.', '20250116T020000Z', '20250116T083000Z')">Add to Google Calendar</button>
+    <button onclick="addToAppleCalendar('Chapram Puja (Voli)', '#557, 9th Cross, 3rd Phase, J P Nagar, Bangalore 560078.', '20250116T020000Z', '20250116T083000Z')">Add to Apple Calendar</button>
+    <button onclick="addToOutlookCalendar('Chapram Puja (Voli)', '#557, 9th Cross, 3rd Phase, J P Nagar, Bangalore 560078.', '20250116T020000Z', '20250116T083000Z')">Add to Outlook Calendar</button>
+</div>   -->
+</div>
+<div class="attire">Attire: Anything floral or colorful</div>
+<div class="evt-details">
+<p>The wedding festivities begin with the Chapram pooja at Varsha’s house. During this first ceremony, the family seeks ancestral blessings and decorate the house to commence the celebrations.</p>
+
+</div>
+</div>
+
+
+<div class="block hidden" style="--accent:#f7a223"
+    data-access-level=2>
+<div class="sideways"><h1>
+    Rituals
+</h1></div>
+
+
+<h2> Pre-wedding Rituals:  Mehendi & Haldi</h2>
+<div class="calendar-dropdown">
+    <button onclick="toggleDropdown(1)" class="main-button">
+      <span class="icon">🗓️</span> &nbsp;&nbsp;Add to Calendar
+    </button>
+    <div id="dropdown-menu-1" class="dropdown-menu">
+      <button onclick="addToGoogleCalendar(`Haldi/Mehendi (Voli)`, `The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India`, `20250116T120000Z`, `20250116T143000Z`, `Haldi is a ceremony where friends/family apply haldi (turmeric paste) on the bride and groom's face and body. Mehendi is a ceremony where henna is used to create body art.`)">Google
+      </button>
+      <button onclick="addToAppleCalendar(`Haldi/Mehendi (Voli)`, `The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India`, `20250116T120000Z`, `20250116T143000Z`, `Haldi is a ceremony where friends/family apply haldi (turmeric paste) on the bride and groom's face and body. Mehendi is a ceremony where henna is used to create body art.`)">Apple
+      </button>
+      <button onclick="addToOutlookCalendar(`Haldi/Mehendi (Voli)`, `The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India`, `20250116T120000Z`, `20250116T143000Z`, `Haldi is a ceremony where friends/family apply haldi (turmeric paste) on the bride and groom's face and body. Mehendi is a ceremony where henna is used to create body art.`)">Outlook
+      </button>
+    </div>
+  </div>
+<div class="timing">
+16 January 2025
+@ 5:30pm -- 8:00pm
+<!-- <span class="cal-links">
+    <a href=""> [cal] </a>
+</span> -->
+
+<!-- <div class="add-to-calendar">
+    <button onclick="addToGoogleCalendar('Haldi/Mehendi (Voli)', 'The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India', '20250116T120000Z', '20250116T143000Z')">Add to Google Calendar</button>
+    <button onclick="addToAppleCalendar('Haldi/Mehendi (Voli)', 'The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India', '20250116T120000Z', '20250116T143000Z')">Add to Apple Calendar</button>
+    <button onclick="addToOutlookCalendar('Haldi/Mehendi (Voli)', 'The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India', '20250116T120000Z', '20250116T143000Z')">Add to Outlook Calendar</button>
+</div>   -->
+</div>
+<div class="attire">Attire: Anything floral or colorful</div>
+<div class="evt-details">
+<p><strong><a href="https://en.wikipedia.org/wiki/Turmeric">Haldi</a></strong> is a cleansing ritual where family and friends come together to apply haldi (turmeric paste) on the bride and groom’s face and body, because it is known to possess antioxidant and anti-inflammatory properties.</p>
+
+<p><strong><a href="https://en.wikipedia.org/wiki/Mehndi">Mehndi</a></strong>—or henna—is an ancient form of body art, found in India, Egypt, North Africa, East Africa and the Middle East. Professional mehendi artists will be on-site to create beautiful patterns for all our guests!</p>
+
+<p>Join us for an evening of music, dance, and rituals as we begin our wedding festivities!</p>
+
+</div>
+</div>
+
+
+<div class="block hidden" style="--accent:#A00"
+    data-access-level=1>
+<div class="sideways"><h1>
+    Wedding
+</h1></div>
+
+
+<h2> Main Wedding Ceremony</h2>
+<div class="calendar-dropdown">
+    <button onclick="toggleDropdown(2)" class="main-button">
+      <span class="icon">🗓️</span> &nbsp;&nbsp;Add to Calendar
+    </button>
+    <div id="dropdown-menu-2" class="dropdown-menu">
+      <button onclick="addToGoogleCalendar(`Wedding (Voli)`, `The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India`, `20250117T020000Z`, `20250117T083000Z`, `Traditional wedding ceremony.`)">Google
+      </button>
+      <button onclick="addToAppleCalendar(`Wedding (Voli)`, `The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India`, `20250117T020000Z`, `20250117T083000Z`, `Traditional wedding ceremony.`)">Apple
+      </button>
+      <button onclick="addToOutlookCalendar(`Wedding (Voli)`, `The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India`, `20250117T020000Z`, `20250117T083000Z`, `Traditional wedding ceremony.`)">Outlook
+      </button>
+    </div>
+  </div>
+<div class="timing">
+17 January 2025
+@ 7:30am -- 2:00pm
+<!-- <span class="cal-links">
+    <a href=""> [cal] </a>
+</span> -->
+
+<!-- <div class="add-to-calendar">
+    <button onclick="addToGoogleCalendar('Wedding (Voli)', 'The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India', '20250117T020000Z', '20250117T083000Z')">Add to Google Calendar</button>
+    <button onclick="addToAppleCalendar('Wedding (Voli)', 'The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India', '20250117T020000Z', '20250117T083000Z')">Add to Apple Calendar</button>
+    <button onclick="addToOutlookCalendar('Wedding (Voli)', 'The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India', '20250117T020000Z', '20250117T083000Z')">Add to Outlook Calendar</button>
+</div>   -->
+</div>
+<div class="attire">Attire: Traditional Indian clothes (saris, lehengas, kurtas)</div>
+<div class="evt-details">
+<p>The South Indian wedding ceremony will include many rituals like 
+<a href="https://www.thetamarindtree.in/blog/jeelakarra-bellam-ritual/">Jīlakarra Bellaṃ</a>
+and
+<a href="https://www.thetamarindtree.in/blog/saptapadi-saat-phere/">Saptapadi</a>.</p>
+
+</div>
+</div>
+
+
+<div class="block hidden" style="--accent:#3daee1"
+    data-access-level=1>
+<div class="sideways"><h1>
+    Reception
+</h1></div>
+
+
+<h2> Meet and Greet</h2>
+<div class="calendar-dropdown">
+    <button onclick="toggleDropdown(3)" class="main-button">
+      <span class="icon">🗓️</span> &nbsp;&nbsp;Add to Calendar
+    </button>
+    <div id="dropdown-menu-3" class="dropdown-menu">
+      <button onclick="addToGoogleCalendar(`Meet and Greet (Voli)`, `The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India`, `20250117T123000Z`, `20250117T153000Z`, `Celebrate our wedding with a live band and lots of good food!`)">Google
+      </button>
+      <button onclick="addToAppleCalendar(`Meet and Greet (Voli)`, `The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India`, `20250117T123000Z`, `20250117T153000Z`, `Celebrate our wedding with a live band and lots of good food!`)">Apple
+      </button>
+      <button onclick="addToOutlookCalendar(`Meet and Greet (Voli)`, `The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India`, `20250117T123000Z`, `20250117T153000Z`, `Celebrate our wedding with a live band and lots of good food!`)">Outlook
+      </button>
+    </div>
+  </div>
+<div class="timing">
+17 January 2025
+@ 6:00pm -- 9:00pm
+<!-- <span class="cal-links">
+    <a href=""> [cal] </a>
+</span> -->
+
+<!-- <div class="add-to-calendar">
+    <button onclick="addToGoogleCalendar('Meet and Greet (Voli)', 'The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India', '20250117T123000Z', '20250117T153000Z')">Add to Google Calendar</button>
+    <button onclick="addToAppleCalendar('Meet and Greet (Voli)', 'The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India', '20250117T123000Z', '20250117T153000Z')">Add to Apple Calendar</button>
+    <button onclick="addToOutlookCalendar('Meet and Greet (Voli)', 'The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India', '20250117T123000Z', '20250117T153000Z')">Add to Outlook Calendar</button>
+</div>   -->
+</div>
+<div class="attire">Attire: Indian / Indowestern /  Western</div>
+<div class="evt-details">
+<p>Celebrate our wedding with a live band and lots of good food!</p>
+
+</div>
+</div>
+
+
+<div class="block hidden" style="--accent:black"
+    data-access-level=3>
+<div class="sideways"><h1>
+    Games
+</h1></div>
+
+
+<h2> Games and Brunch</h2>
+<div class="calendar-dropdown">
+    <button onclick="toggleDropdown(4)" class="main-button">
+      <span class="icon">🗓️</span> &nbsp;&nbsp;Add to Calendar
+    </button>
+    <div id="dropdown-menu-4" class="dropdown-menu">
+      <button onclick="addToGoogleCalendar(`Games (Voli)`, `The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India`, `20250118T053000Z`, `20250118T083000Z`, `Join us for games and friendly competition. There will also be tasty brunch!`)">Google
+      </button>
+      <button onclick="addToAppleCalendar(`Games (Voli)`, `The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India`, `20250118T053000Z`, `20250118T083000Z`, `Join us for games and friendly competition. There will also be tasty brunch!`)">Apple
+      </button>
+      <button onclick="addToOutlookCalendar(`Games (Voli)`, `The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India`, `20250118T053000Z`, `20250118T083000Z`, `Join us for games and friendly competition. There will also be tasty brunch!`)">Outlook
+      </button>
+    </div>
+  </div>
+<div class="timing">
+18 January 2025
+@ 11:00am -- 2:00pm
+<!-- <span class="cal-links">
+    <a href=""> [cal] </a>
+</span> -->
+
+<!-- <div class="add-to-calendar">
+    <button onclick="addToGoogleCalendar('Games (Voli)', 'The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India', '20250118T053000Z', '20250118T083000Z')">Add to Google Calendar</button>
+    <button onclick="addToAppleCalendar('Games (Voli)', 'The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India', '20250118T053000Z', '20250118T083000Z')">Add to Apple Calendar</button>
+    <button onclick="addToOutlookCalendar('Games (Voli)', 'The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India', '20250118T053000Z', '20250118T083000Z')">Add to Outlook Calendar</button>
+</div>   -->
+</div>
+<div class="attire">Attire: Anything comfy</div>
+<div class="evt-details">
+<p>Join us for games and friendly competition. There will also be tasty brunch!<br />
+(This event is invite-only; not all guests are invited.)</p>
+
+
+</div>
+</div>
+
+
+<div class="block hidden" style="--accent:#be95be"
+    data-access-level=3>
+<div class="sideways"><h1>
+    Reception
+</h1></div>
+
+
+<h2> (Private) Small Reception</h2>
+<div class="calendar-dropdown">
+    <button onclick="toggleDropdown(5)" class="main-button">
+      <span class="icon">🗓️</span> &nbsp;&nbsp;Add to Calendar
+    </button>
+    <div id="dropdown-menu-5" class="dropdown-menu">
+      <button onclick="addToGoogleCalendar(`Reception (Voli)`, `The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India`, `20250118T113000Z`, `20250118T163000Z`, `Reception with toasts and dancing!`)">Google
+      </button>
+      <button onclick="addToAppleCalendar(`Reception (Voli)`, `The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India`, `20250118T113000Z`, `20250118T163000Z`, `Reception with toasts and dancing!`)">Apple
+      </button>
+      <button onclick="addToOutlookCalendar(`Reception (Voli)`, `The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India`, `20250118T113000Z`, `20250118T163000Z`, `Reception with toasts and dancing!`)">Outlook
+      </button>
+    </div>
+  </div>
+<div class="timing">
+18 January 2025
+@ 5:00pm -- 10:00pm
+<!-- <span class="cal-links">
+    <a href=""> [cal] </a>
+</span> -->
+
+<!-- <div class="add-to-calendar">
+    <button onclick="addToGoogleCalendar('Reception (Voli)', 'The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India', '20250118T113000Z', '20250118T163000Z')">Add to Google Calendar</button>
+    <button onclick="addToAppleCalendar('Reception (Voli)', 'The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India', '20250118T113000Z', '20250118T163000Z')">Add to Apple Calendar</button>
+    <button onclick="addToOutlookCalendar('Reception (Voli)', 'The Tamarind Tree, 88, Avalahalli Kanakapura Rd, Royal Park Residency Layout, JP Nagar 9th Phase, J. P. Nagar, Bengaluru, Karnataka 560108, India', '20250118T113000Z', '20250118T163000Z')">Add to Outlook Calendar</button>
+</div>   -->
+</div>
+<div class="attire">Attire: Cocktail dress (Indian or Western)</div>
+<div class="evt-details">
+<p>Reception with toasts and dancing! <strong>Arrive on time.</strong><br />
+(This event is invite-only; not all guests are invited.)</p>
+
+</div>
+</div>
+
+
+      </div>
+    </main>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="/voli/cssjs/main.js"></script>
+    
+      
+        <script type="text/javascript" src="/voli/cssjs/events.js"></script>
+      
+    
+  </body>
+</html>

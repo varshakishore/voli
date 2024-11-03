@@ -1,0 +1,89 @@
+---
+title_short: Events
+title: Event Schedule
+layout: default
+custom_js:
+    - events
+custom_css:
+    - protect
+    - calendar
+---
+
+{% include navbar.html %}
+
+<div class="center">
+<h1 onclick="document.getElementById('unlock-controls').style.display = 'block';"> {{page.title}} </h1>
+</div>
+
+<div class="center" id="unlock-controls">
+    <p style="margin-bottom:35px;">
+        Event details and timings are only available for guests. 
+        If you cannot find the password that came with your link to this website
+        (or are not yet a guest but would like to become one), 
+        <br/>
+        please contact Oliver or Varsha! 
+    </p>
+    <!-- <p>Please enter the password that you receivied with the website link to unlock event details and timings. Contact Varsha/Oli if you can't find the password.</p> -->
+    <div>
+    <label for="passwd"><b>password:</b></label>
+    <input type="text" id="passwd" name="">
+    <span id="wrongpass">Incorrect Password!</span>
+    </div>
+    <div>
+    <input type=checkbox id="cookie-permit" selected></input>
+    <label for="cookie-permit" style="max-width:100px;overflow:visible;">save unlock in a 
+            <a href="https://en.wikipedia.org/wiki/HTTP_cookie">cookie</a>
+            that expires after the wedding?</label>
+    </div>
+
+    <button id="unlock-btn" onclick="unlock();"> unlock event details </button>
+</div>
+
+<div class=block data-access-level=0>
+(Feel free to wear anything you'd like for all of the events. The attire listed below is just a suggestion in case you are looking for inspiration.)
+</div>
+
+{% assign i = 0 %}
+{% assign evts_sorted = site.evts | sort : "start" %}
+{% for evt in evts_sorted %}
+<div class="block hidden" style="--accent:{{evt.accent}}"
+    data-access-level={{evt.access_level}}>
+<div class="sideways"><h1>
+    {{ evt.leftblock }}
+</h1></div>
+
+
+<h2> {{ evt.name }}</h2>
+<div class="calendar-dropdown">
+    <button onclick="toggleDropdown({{i}})" class="main-button">
+      <span class="icon">🗓️</span> &nbsp;&nbsp;Add to Calendar
+    </button>
+    <div id="dropdown-menu-{{i}}" class="dropdown-menu">
+      <button onclick="addToGoogleCalendar(`{{ evt.title }}`, `{{ evt.location }}`, `{{ evt.start }}`, `{{ evt.end }}`, `{{ evt.desc }}`)">Google
+      </button>
+      <button onclick="addToAppleCalendar(`{{ evt.title }}`, `{{ evt.location }}`, `{{ evt.start }}`, `{{ evt.end }}`, `{{ evt.desc }}`)">Apple
+      </button>
+      <button onclick="addToOutlookCalendar(`{{ evt.title }}`, `{{ evt.location }}`, `{{ evt.start }}`, `{{ evt.end }}`, `{{ evt.desc }}`)">Outlook
+      </button>
+    </div>
+  </div>
+<div class="timing">
+{{ evt.date |  date: "%-d %B %Y"}}
+@ {{ evt.timerange }}
+<!-- <span class="cal-links">
+    <a href="{{ evt.ical }}"> [cal] </a>
+</span> -->
+
+<!-- <div class="add-to-calendar">
+    <button onclick="addToGoogleCalendar('{{ evt.title }}', '{{ evt.location }}', '{{ evt.start }}', '{{ evt.end }}')">Add to Google Calendar</button>
+    <button onclick="addToAppleCalendar('{{ evt.title }}', '{{ evt.location }}', '{{ evt.start }}', '{{ evt.end }}')">Add to Apple Calendar</button>
+    <button onclick="addToOutlookCalendar('{{ evt.title }}', '{{ evt.location }}', '{{ evt.start }}', '{{ evt.end }}')">Add to Outlook Calendar</button>
+</div>   -->
+</div>
+<div class="attire">Attire: {{ evt.attire }}</div>
+<div class="evt-details">
+{{ evt.content }}
+</div>
+</div>
+{% assign i = i | plus:1 %}
+{% endfor %}

@@ -1,0 +1,121 @@
+:root {
+  --depth : 0;
+  /* --rainfall-floor : calc(var(--depth) + 83)%; */
+  --rainfall-floor : 85%;
+}
+
+.rain-pane {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow:hidden;
+    z-index: -1;
+    background: linear-gradient(45deg, );
+}
+
+.raindrop {
+    --depth: 1;
+    position: absolute;
+    bottom: 100%;
+    height: 120px;
+    width: 5px;
+    pointer-events: none;
+    animation: drop 2s linear infinite;
+    /* opacity: calc(.2 + .3/(1+var(--depth))); */
+    opacity: calc(.3 + .7 / (1 + var(--depth)));
+    /* transition: left .2s; */
+    /* , top .2s; */
+}
+
+
+ @keyframes drop {
+    0% {
+        /* transform: translateY(0%); */
+        /* transform: translateY(0%); */
+        /* left: var(--reset-pos); */
+        top: 0%;
+    }
+    5% { 
+        /* left: var(--reset-pos);  */
+    }
+    75% {
+        /* transform: translateY(90%); */
+        top: var(--rainfall-floor);
+    }
+    100% {
+        /* transform: translateY(90%); */
+        top: var(--rainfall-floor);
+    }
+}
+  
+.stem {
+    /* width: 1px; */
+    width: calc(1px + 0px / (1 + var(--depth)));
+    /* height: 60%; */
+    height: calc(50% + 20% / (1 + var(--depth)));
+    /* margin-left: 7px; */
+    /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(31, 2, 61, 0.329)); */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(4, 36, 79, 0.517));
+    /* background:gray; */
+    animation: stem 2s linear infinite;
+    animation-delay: inherit;
+    animation-duration: inherit;
+}
+  
+@keyframes stem {
+    0% {
+      /* height: 100%; */
+      opacity: 1;
+    }
+    65% {
+      /* height: 100%; */
+      opacity: 1;
+    }
+    75% {
+      /* height: 0%; */
+      opacity: 0;
+    }
+    100% {
+      /* height: 0%; */
+      opacity: 0;
+    }
+}
+  
+.splat {
+    width: 15px;
+    height: 10px;
+    /* border-top: 2px dotted rgba(255, 255, 255, 0.5); */
+    /* border-top:2px dotted rgba(255, 0, 0, 0.5); */
+    border-top:2px dotted var(--vcolor);
+    border-radius: 50%;
+    opacity: 1;
+    transform: scale(0);
+    animation: splat 2s linear infinite;
+    animation-delay: inherit;
+    animation-duration: inherit;
+    /* display: none; */
+    display: block;
+}
+  
+@keyframes splat {
+    0% {
+      opacity: 1;
+      transform: scale(0);
+    }
+    80% {
+      opacity: 1;
+      transform: scale(0);
+    }
+    90% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      /* transform: scale(3); */
+      transform: scale(calc(1 + 3 / (1 + var(--depth))));
+    }
+}
+  

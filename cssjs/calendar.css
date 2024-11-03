@@ -1,0 +1,44 @@
+.calendar-dropdown {
+    position: relative;
+    float: right;
+}
+  
+.main-button {
+padding: 8px 8px;
+margin: 4px 4px;
+color: black;
+border: 1px solid color-mix(in srgb, var(--accent) 5%, #eee 90%);
+border-radius: 10px;
+cursor: pointer;
+/* background-color: transparent; */
+background-color: color-mix(in srgb, var(--accent) 5%, #fafafa 90%);
+}
+.main-button:hover{
+  /* font-size:larger; */
+  background-color: color-mix(in srgb, var(--accent) 10%, #eee 90%);
+}
+
+.dropdown-menu {
+display: none; /* Hidden by default */
+position: absolute;
+top: 100%;
+left: 0;
+background-color: #ffffff;
+border: 1px solid #ddd;
+box-shadow: 0 8px 16px rgba(134, 134, 134, 0.2);
+border-radius: 5px;
+z-index: 1;
+}
+
+.dropdown-menu button {
+padding: 10px;
+width: 100%;
+background: none;
+border: 0.25px solid rgb(161, 161, 161);
+cursor: pointer;
+text-align: center;
+}
+
+.dropdown-menu button:hover {
+background-color: #f1f1f1;
+}

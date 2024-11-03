@@ -1,0 +1,68 @@
+:root {
+    --imgwidth: 300px;
+    --imgheight: 340px;
+    --hex-spacing: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* varsha hexagons */
+.hex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* max-width: 640px; */
+    /* width: 100%; */
+    /* opacity: 50%; */
+}
+.hex-wrapper {
+    position: relative;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    /* transition: scale .3s ease-in-out,  z-index .3s cubic-bezier(0,1,1,0); */
+    transition: all .3s ease-in-out;
+    margin: 0 var(--hex-spacing);
+    /* transition-delay: 0.5s; */
+}
+.hex-row {
+    display: flex;
+    justify-content: center;
+    /* margin-top: -65px; Adjust this value to change the vertical overlap */
+    margin-top: calc(0px - var(--imgheight) / 4 + var(--hex-spacing) / 0.8 ); 
+}
+.hex, .hex-pad {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+.hex {
+    width: var(--imgwidth);
+    height: var(--imgheight);
+    /* margin: 0 10px; */
+    overflow: hidden;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+.hex-pad {
+    content: 'asdf';
+    width: calc(var(--imgwidth) + 2 * var(--hex-spacing));
+    height: calc(var(--imgheight) + 2 * var(--hex-spacing));
+    background: white;
+    position: absolute;
+    top: calc(0px - var(--hex-spacing));
+    left: calc(0px - var(--hex-spacing));
+  }
+
+  .hex img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   
+}
+
+.gallery-spacer {
+    height: calc(var(--imgheight) / 4 + var(--hex-spacing) + 10px);
+}
+.small-spacer {
+    height: 35px;
+}

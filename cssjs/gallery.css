@@ -1,0 +1,111 @@
+.hex.active {
+    /* filter: blur(3px) sepia(50%); */
+    /* clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%, 0% 0%); */
+}
+.hex.blurry {
+    filter: blur(3px) grayscale(30%);
+}
+
+.hex-wrapper:hover {
+    scale: 130%;
+    z-index: 2;
+}
+
+.hex-wrapper:hover .hex-pad {
+    --hex-spacing: 20px;
+}
+
+#img-display {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width:100%;
+    height:100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 3;
+    clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%, 0% 0%);
+    
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    /* margin:auto; */
+    /* width: 60%; */
+    clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%, 0% 0%);
+    /* pointer-events: none; */
+}
+
+#img-display img {
+    vertical-align: middle;
+    border: 10px solid white;
+    max-width: 100vw;
+    max-height: 100vh;
+    /* pointer-events: auto; */
+}
+
+#img-display:not(.active) {
+    width:0px;
+    height:0px;
+    left:50%;
+    top:50%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+#img-display.active{
+    width: 100%;
+}
+
+.transition-bypass {
+    transition: none !important;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .hex-wrapper:nth-child(2) {
+        display: none;
+    }
+    :root {
+        --imgwidth : 45vw;
+        --imgheight: 51vw;
+    }
+}
+
+
+/* old gallery
+
+.hex:first-child, .hex:last-child {
+    filter:grayscale(.5) contrast(.5);
+    opacity:0.2;
+    scale: 0.8;
+}
+
+.in-flux {
+    filter: blur(10px);
+}
+
+.control {
+    position: fixed;
+    top: calc(50% - 80px / 2);
+    height: 80px;
+}
+.control button {
+    height: 100%;
+    border: none;
+    background: none;
+    font-size: 70pt;
+}
+.control button:hover {
+    color:red;
+    text-decoration: dotted;
+    font-size: 72pt;
+}
+
+.control-left {
+    left: 50px;
+}
+.control-right { 
+    right: 50px;
+}
+*/

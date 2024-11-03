@@ -1,0 +1,33 @@
+
+<navbar class="fullpagewidth">
+<ul>
+<!-- <li class="nav-home"><a href="/">Voli</a></li> -->
+<!-- <li class="nav-home"><a href="/"></a></li> -->
+<li class="nav-item" > <!-- {% if page.url == '/' %}current-tab{% endif %} -->
+    <a href="/{{site.baseurl}}">
+        <!-- <div style="background-image: url('/assets/cloud.png'); width:10px; height:18px;"></div> -->
+        <img src="/{{site.baseurl}}assets/cloud.png" height="30px" style="margin:-10px -0px; "/>
+    </a>
+</li>
+{% assign i = 0 %}
+{% for tab in site.tabs %}
+{% unless tab.hide %}
+    {% if i == 3 %}
+        <br>
+    {% endif %}
+<li class="nav-item {% if tab.url == page.url%}current-tab{% endif %}">
+    <a href="{{ tab.url | relative_url }}" >
+        {{tab.title_short}}
+    </a>
+</li>
+{% assign i = i | plus: 1 %}
+{% endunless %}
+{% endfor %}
+<br>
+<li class="nav-item rsvp">
+    <a href="https://forms.gle/1KobqjmUYpwjUKuJ7"> RSVP </a>
+</li>
+
+</ul>
+</navbar>
+
